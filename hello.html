@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday to My Beutiful Princess ❤️</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff69b4;
+            animation: floatUp 6s infinite linear;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .title {
+            font-size: 3em;
+            color: #e91e63;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .dudu-bubu {
+            font-size: 4em;
+            margin: 20px 0;
+            animation: wiggle 2s infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .love-note {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #2d3436;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .love-note:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .balloons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .balloon {
+            width: 60px;
+            height: 80px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .balloon:nth-child(1) { background: #ff6b6b; animation-delay: 0s; }
+        .balloon:nth-child(2) { background: #4ecdc4; animation-delay: 0.5s; }
+        .balloon:nth-child(3) { background: #45b7d1; animation-delay: 1s; }
+        .balloon:nth-child(4) { background: #f9ca24; animation-delay: 1.5s; }
+        .balloon:nth-child(5) { background: #6c5ce7; animation-delay: 2s; }
+
+        .balloon::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 50px;
+            background: #333;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .memory-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .kiss-animation {
+            font-size: 2em;
+            animation: kiss 2s infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes kiss {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .sparkle {
+            position: absolute;
+            color: #ffd700;
+            font-size: 20px;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .countdown {
+            font-size: 2em;
+            color: #e91e63;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .title { font-size: 2em; }
+            .page { padding: 20px; margin: 10px; }
+            .dudu-bubu { font-size: 3em; }
+            .balloon { width: 40px; height: 60px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <div class="container">
+        <div class="page" id="page1">
+            <div class="sparkles">
+                <span class="sparkle" style="top: 10%; left: 20%;">✨</span>
+                <span class="sparkle" style="top: 20%; right: 15%;">⭐</span>
+                <span class="sparkle" style="bottom: 30%; left: 10%;">✨</span>
+                <span class="sparkle" style="bottom: 20%; right: 20%;">⭐</span>
+            </div>
+            
+            <h1 class="title">Happy Birthday Madam g 🥭 🎉 </h1>
+            <div class="dudu-bubu">🥳🥳🥳🥳   😚😚😚😚</div>
+            
+            <div class="love-note">
+              Aaj meri Bacchu da Birthday 😊😊
+              Paas hota to kuch acha krrta prr online mai sirf itna hi 🫡
+            </div>
+            
+            <div class="balloons">
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+            
+            <button class="button" onclick="showPage(2)">Ikk comeback de size da birthday wish 💖</button>
+        </div>
+
+        <div class="page hidden" id="page2">
+            <h2 class="title">Why Rasmalayi looks Super Beautiful that no other girl even cone close to 😚😚</h2>
+            <div class="dudu-bubu">🐼</div>
+            
+            <div class="memory-card">
+                <h3>Your Beautiful Smile 😍</h3>
+                <p>Every time you smile, my whole world looks. It's like the most beautiful thing I can see forever 👀</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>Your kind heart 🫀</h3>
+                <p>Aapke jesa achaa viyakti aur kahaa milega madam g hamko 🤔</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>Your chubbyyyyy cheeks 😫🤤</h3>
+                <p>Inniya pyaariya te mulaayam jhiya galla haaaye! Utto fully eatable😘 🥴🫠🫠</p>
+            </div>
+            
+            <div class="kiss-animation">😚😚 Sending you kisses! 😚😚</div>
+            
+            <button class="button" onclick="showPage(3)">More Love! 💓</button>
+            <button class="button" onclick="showPage(1)">Back </button>
+        </div>
+
+        <div class="page hidden" id="page3">
+            <h2 class="title">Aapki Pyaari c Yaadein 🙂 </h2>
+            <div class="dudu-bubu">🐼</div>
+            
+            <div class="love-note">
+                Aapki balcony vaale flashbacks 😉
+            </div>
+            
+            <div class="memory-card">
+                <h3>🌟 Jab aapko human subspecies mein pehli baar dekha😗 </h3>
+                <p>Udo toh baar baar dekhn da rog lgaa ditta tu c 😫</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>🌙 Our Late Night Talks</h3>
+                <p>Those endless conversations jdo time lngn da pta ni lggda 😌</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>✨ Every Random Gulu Gulu Together 😜</h3>
+                <p>Silly cheeja toh Gadheya vaale kmm te Serious talks to singha vaali gulu gulu tkk everything is jhakaas</p>
+            </div>
+            
+            <div class="kiss-animation"> Virtual Hug 🫂🤗</div>
+            
+            <button class="button" onclick="showPage(4)">Birthday Surprise! 🎁</button>
+            <button class="button" onclick="showPage(2)">Back </button>
+        </div>
+
+        <div class="page hidden" id="page4">
+            <h2 class="title">Apke Janam Divas Ki Shubhkaamnaaye! 🎂</h2>
+            <div class="dudu-bubu">🎉🐼💖🧸🎊</div>
+            
+            <div class="countdown" id="countdown">🎈 It's Your Birthday! 🎈</div>
+            
+            <div class="love-note">
+          Finally Kaafi time baad apne guggu muggu nu wish krr paya 🤗🤗          </div>
+            
+            <div class="balloons">
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+            
+            <div class="memory-card">
+                <h3>🎁 My Birthday Wish for You</h3>
+                <p>May this new year bring you endless joy, laughter, adventures, and Most importantly all the Success that this beautiful heart deserves!</p>
+            </div>
+            
+            <div class="kiss-animation">🎂 Make a wish! 🎂</div>
+            
+            <button class="button" onclick="showPage(5)">Final Message 💌</button>
+            <button class="button" onclick="showPage(3)">Back 🔙</button>
+        </div>
+
+        <div class="page hidden" id="page5">
+            <h2 class="title">Forever Yours 😘</h2>
+            <div class="dudu-bubu">👫💕</div>
+            
+            <div class="love-note">
+                Happy Birthday to my everything! 
+                <br><br>
+                Thank you for being my Love - beautiful, kind, funny, smart, and absolutely perfect in every way. I love you more than words can express!
+                <br><br>
+                Here's to another year of making incredible memories together! 🐼
+            </div>
+            
+            <div class="kiss-animation">😙 All My Love 😙</div>
+            
+            <div class="balloons">
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+                <div class="balloon"></div>
+            </div>
+            
+            <button class="button" onclick="showPage(1)">Start Over 🔄</button>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['💖', '💕', '💗', '💝', '💘'][Math.floor(Math.random() * 5)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            
+            document.getElementById('heartsContainer').appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        // Create hearts continuously
+        setInterval(createHeart, 800);
+
+        // Page navigation
+        function showPage(pageNumber) {
+            // Hide all pages
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById('page' + i).classList.add('hidden');
+            }
+            
+            // Show selected page
+            document.getElementById('page' + pageNumber).classList.remove('hidden');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Add sparkle animation
+        function animateSparkles() {
+            const sparkles = document.querySelectorAll('.sparkle');
+            sparkles.forEach((sparkle, index) => {
+                sparkle.style.animationDelay = (index * 0.5) + 's';
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('load', () => {
+            animateSparkles();
+            
+            // Add some initial hearts
+            for (let i = 0; i < 5; i++) {
+                setTimeout(createHeart, i * 200);
+            }
+        });
+
+        // Add click effects
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('button')) {
+                // Create burst of hearts on button click
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(createHeart, i * 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html># Bday
